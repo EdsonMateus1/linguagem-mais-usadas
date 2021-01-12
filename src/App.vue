@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <div class="container-chart">
-      <chart></chart>
+      <ContrrolerChart/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Chart from "./components/LineChart.vue";
+import ContrrolerChart from "./components/ContrrolerChart.vue";
 
 @Component({
   components: {
-    Chart,
+    ContrrolerChart,
   },
 })
 export default class App extends Vue {}

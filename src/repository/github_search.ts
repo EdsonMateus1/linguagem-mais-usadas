@@ -3,7 +3,7 @@ import { GithubRepositoryProtocol } from "./protocol/github_repository";
 
 export class GitHubTopLanguages {
   async getRepositories() {
-    const languageFrequency: Record<string,number> = {};
+    const languageFrequency: Record<string, number> = {};
     const res = await api.get("EdsonMateus1/repos");
     const data: Array<GithubRepositoryProtocol> = res.data;
     data.forEach((repository) => {
@@ -14,16 +14,23 @@ export class GitHubTopLanguages {
       }
     });
     const languageKey = Object.keys(languageFrequency);
+    function getRandom() {
+      return Math.floor(Math.random() * 255 + 1);
+    }
     const chartData = languageKey.map((language) => {
+      const color = `rgba(${getRandom()},${getRandom()},${getRandom()},0.2)`
       return {
         label: language === "null" ? "outros" : language,
-        data: languageFrequency[language],
+        data: [languageFrequency[language]],
         borderColor: "#2554FF",
-        backgroundColor: "rgba(0, 100, 255, 0.2)",
+        backgroundColor: color,
         borderWidth: 1,
         fill: true,
       };
     });
-    return chartData;
+    return {
+      labels: [""],
+      datasets: chartData,
+    };
   }
 }

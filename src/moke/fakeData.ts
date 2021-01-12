@@ -1,12 +1,9 @@
 import { GitHubTopLanguages } from "../repository/github_search";
 const gitHubTopLanguages = new GitHubTopLanguages();
 
-async function getData() {
-  const datasets = await gitHubTopLanguages.getRepositories();
-  return {
-    labels: [""],
-    datasets,
-  };
+export async function getData() {
+  const res = await gitHubTopLanguages.getRepositories();
+  return res
 }
 
 export const fakeData = {
@@ -94,4 +91,3 @@ export const fakeData = {
     },
   ],
 };
-
