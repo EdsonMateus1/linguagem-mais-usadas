@@ -94,3 +94,17 @@ export interface GithubRepositoryProtocol {
   watchers: number;
   default_branch: string;
 }
+
+export interface DatasetsProtocol {
+  label: string;
+  data: Array<number | any>;
+  borderColor: string;
+  backgroundColor: string;
+  borderWidth: number;
+  fill: boolean;
+}
+
+export interface ChartDataProtocol {
+  labels: Array<string>;
+  datasets: Array<DatasetsProtocol>;
+}

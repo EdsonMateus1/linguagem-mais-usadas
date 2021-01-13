@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-//import { fakeData } from "../moke/fakeData";
 import { GitHubTopLanguages } from "../repository/github_search";
 import Chart from "./LineChart.vue";
 
@@ -35,3 +34,9 @@ export default class Char extends Vue {
   }
 }
 </script>
+
+<style scope>
+.container-chart {
+  width: 100%;
+}
+</style>

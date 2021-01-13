@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <div class="container-chart">
-      <ContrrolerChart/>
-    </div>
+    <ContrrolerChart />
   </div>
 </template>
 
@@ -28,9 +26,6 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-}
-.container-chart {
   width: 100%;
 }
 </style>
